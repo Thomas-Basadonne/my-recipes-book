@@ -16,13 +16,17 @@
 <div class="row">
   <div class="col-xs-12">
     <div class="btn-group">
-      <button class="btn btn-primary dropdown-toggle">
+      <button
+        class="btn btn-secondary dropdown-toggle"
+        type="button"
+        appDropdown
+      >
         Gestisci ricetta <span class="caret"></span>
       </button>
-      <ul class="dropdown-menu">
-        <li><a href="#">Vai alla lista</a></li>
-        <li><a href="#">Modifica ricetta</a></li>
-        <li><a href="#">Cancella ricetta</a></li>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" href="#">Vai alla lista</a></li>
+        <li><a class="dropdown-item" href="#">Modifica ricetta</a></li>
+        <li><a class="dropdown-item" href="#">Cancella ricetta</a></li>
       </ul>
     </div>
   </div>
