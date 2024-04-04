@@ -13,19 +13,22 @@ export class DropdownDirective {
     this.toggleDropdown();
   }
 
-  @HostListener('document:click', ['$event.target']) onDocumentClick(
-    target: HTMLElement
-  ) {
+  @HostListener('document:click', ['$event.target'])
+  onDocumentClick(target: HTMLElement) {
     if (!this.elementRef.nativeElement.contains(target)) {
-      this.closeDropdown();
+      if (this.dropdownMenu) { // Check if dropdownMenu is not undefined
+        this.closeDropdown();
+      }
     }
-  }
+  }  
 
   private toggleDropdown() {
-    if (this.dropdownMenu.classList.contains('show')) {
-      this.closeDropdown();
-    } else {
-      this.openDropdown();
+    if (this.dropdownMenu) {
+      if (this.dropdownMenu.classList.contains('show')) {
+        this.closeDropdown();
+      } else {
+        this.openDropdown();
+      }
     }
   }
 
