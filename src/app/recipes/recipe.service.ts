@@ -1,18 +1,31 @@
 import { EventEmitter } from '@angular/core';
 import { Recipe } from './recipe.model';
+import { Ingredient } from '../shared/ingredient.model';
 export class RecipeService {
   recipeSelected = new EventEmitter<Recipe>();
 
   private recipes: Recipe[] = [
     new Recipe(
-      'Una ricetta test',
-      'test',
-      'https://www.misya.info/wp-content/uploads/2015/06/Pancakes-alla-nutella3.jpg'
+      'Hamburger',
+      'Un hamburger così non lo hai mangiato!',
+      'https://www.misya.info/wp-content/uploads/2015/06/Pancakes-alla-nutella3.jpg',
+      [
+        new Ingredient('Pane', 1),
+        new Ingredient('Pomodoro', 2),
+        new Ingredient('Cipolla', 2),
+        new Ingredient('Carne', 1),
+      ]
     ),
     new Recipe(
-      'Un test diverso',
+      'Carbonara',
       'BLABLABLABLA',
-      'https://www.misya.info/wp-content/uploads/2015/06/Pancakes-alla-nutella3.jpg'
+      'https://www.misya.info/wp-content/uploads/2015/06/Pancakes-alla-nutella3.jpg',
+      [
+        new Ingredient('Pasta', 1),
+        new Ingredient('Uova', 2),
+        new Ingredient('Guanciale', 1),
+        new Ingredient('Pecorino', 1),
+      ]
     ),
   ];
 
