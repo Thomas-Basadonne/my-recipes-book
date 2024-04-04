@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-xs-12">
     <form>
-      <div class="row d-flex align-items-bottom">
+      <div class="row align-items-center">
         <div class="col-sm-5 form-group">
           <label for="name">Nome</label>
           <input type="text" id="name" class="form-control" #nameInput />
@@ -15,18 +15,14 @@
             #quantityInput
           />
         </div>
-        <div class="col-sm-5 d-flex align-items-bottom">
-          <button
-            class="mx-2 btn btn-success"
-            type="submit"
-            (click)="onAddItem()"
-          >
-            Aggiungi
-          </button>
-          <button class="mx-2 btn btn-danger" type="button">Elimina</button>
-          <button class="mx-2 btn btn-primary" type="button">
-            Svuota campi
-          </button>
+        <div class="col-sm-auto align-self-end">
+          <div class="btn-group" role="group">
+            <button type="submit" (click)="onAddItem()" class="btn btn-danger">
+              Aggiungi
+            </button>
+            <button type="button" class="btn btn-warning">Elimina</button>
+            <button type="button" class="btn btn-success">Svuota campi</button>
+          </div>
         </div>
       </div>
     </form>
