@@ -1,9 +1,23 @@
 <app-header></app-header>
-<div class="container-fluid text-center">
-  <h1 class="my-4">Il mio ricettario</h1>
-  <div class="row align-items-start mt-5 mx-5">
+<div class="container-fluid text-center mb-5">
+  <div
+    class="jumbotron jumbotron-fluid bg-danger-subtle rounded-bottom p-5 w-50 mx-auto"
+  >
+    <div class="container">
+      <h1 class="display-1">Il mio ricettario.</h1>
+      <h2 class="lead">
+        In questa web app Angular, gestisco tutte le mie ricette preferite e
+        tengo traccia della mia lista della spesa.
+      </h2>
+    </div>
+  </div>
+
+  <div class="row align-items-start m-5">
     <div class="col">
       <router-outlet></router-outlet>
     </div>
   </div>
 </div>
+<div style="height: 300px"></div>
+
+<app-footer></app-footer>

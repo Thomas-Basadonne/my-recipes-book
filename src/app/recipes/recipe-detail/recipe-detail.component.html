@@ -1,4 +1,4 @@
-<div class="card w-50 mx-auto">
+<div class="card w-50 mx-auto bg-danger-subtle">
   <div class="card-header d-flex align-items-center">
     <div class="ms-3">
       <h2 class="mb-0 fs-sm">{{ recipe.name }}</h2>
@@ -50,7 +50,7 @@
     <div class="mt-3">
       <ul class="list-group">
         <li
-          class="list-group-item"
+          class="list-group-item bg-danger text-white"
           *ngFor="let ingredient of recipe.ingredients"
         >
           {{ ingredient.name }} - {{ ingredient.quantity }}

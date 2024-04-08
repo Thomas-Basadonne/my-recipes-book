@@ -11,7 +11,7 @@ export class RecipeService {
     new Recipe(
       'Hamburger',
       'Un hamburger così non lo hai mangiato!',
-      'https://www.misya.info/wp-content/uploads/2015/06/Pancakes-alla-nutella3.jpg',
+      'https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       [
         new Ingredient('Pane', 1),
         new Ingredient('Pomodoro', 2),
@@ -22,7 +22,7 @@ export class RecipeService {
     new Recipe(
       'Carbonara',
       'BLABLABLABLA',
-      'https://www.misya.info/wp-content/uploads/2015/06/Pancakes-alla-nutella3.jpg',
+      'https://media-assets.lacucinaitaliana.it/photos/6346d938953caa47f945423d/master/pass/310958501_6187723337922695_6308212975480260815_n.jpeg',
       [
         new Ingredient('Pasta', 1),
         new Ingredient('Uova', 2),
