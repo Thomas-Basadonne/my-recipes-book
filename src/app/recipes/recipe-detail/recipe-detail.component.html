@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card w-50 mx-auto">
   <div class="card-header d-flex align-items-center">
     <div class="ms-3">
       <h2 class="mb-0 fs-sm">{{ recipe.name }}</h2>
@@ -15,9 +15,9 @@
       </button>
       <ul class="dropdown-menu">
         <li>
-          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item">Action</a>
         </li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item">Another action</a></li>
       </ul>
     </div>
   </div>
@@ -41,7 +41,9 @@
             >Aggiungi alla lista</a
           >
         </li>
-        <li><a class="dropdown-item">Modifica ricetta</a></li>
+        <li>
+          <a class="dropdown-item" (click)="onEditRecipe()">Modifica ricetta</a>
+        </li>
         <li><a class="dropdown-item">Cancella ricetta</a></li>
       </ul>
     </div>

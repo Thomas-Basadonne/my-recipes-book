@@ -7,16 +7,16 @@
     >
       <div class="navbar-nav">
         <a
-          class="nav-link active text-white"
+          class="nav-link text-white"
           aria-current="page"
-          href="#"
-          (click)="onSelect('recipe')"
+          routerLink="/recipes"
+          routerLinkActive="border-bottom"
           >Ricette</a
         >
         <a
           class="nav-link text-white"
-          href="#"
-          (click)="onSelect('shopping-list')"
+          routerLink="/shopping-list"
+          routerLinkActive="border-bottom"
           >Lista della spesa</a
         >
       </div>
@@ -24,7 +24,6 @@
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle text-white"
-            href="#"
             id="navbarDropdown"
             role="button"
             data-toggle="dropdown"
@@ -35,8 +34,8 @@
             Gestisci
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Save data</a>
-            <a class="dropdown-item" href="#">Fetch data</a>
+            <a class="dropdown-item">Save data</a>
+            <a class="dropdown-item">Fetch data</a>
           </div>
         </li>
       </div>

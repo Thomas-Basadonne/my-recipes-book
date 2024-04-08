@@ -13,7 +13,11 @@
         <p class="card-text">
           {{ recipe.description }}
         </p>
-        <button class="btn btn-primary ms-2" (click)="onSelected()">
+        <button
+          class="btn btn-primary ms-2"
+          [routerLink]="[index]"
+          routerLinkActive="disabled"
+        >
           Dettagli
         </button>
       </div>
