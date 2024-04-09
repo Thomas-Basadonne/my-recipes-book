@@ -16,11 +16,11 @@ export class DropdownDirective {
   @HostListener('document:click', ['$event.target'])
   onDocumentClick(target: HTMLElement) {
     if (!this.elementRef.nativeElement.contains(target)) {
-      if (this.dropdownMenu) { // Check if dropdownMenu is not undefined
+      if (this.dropdownMenu) {
         this.closeDropdown();
       }
     }
-  }  
+  }
 
   private toggleDropdown() {
     if (this.dropdownMenu) {

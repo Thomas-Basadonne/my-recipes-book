@@ -8,9 +8,5 @@ import { features } from 'node:process';
 })
 export class AppComponent {
   title = 'my-recipes-book';
-  loadedFeature = 'recipe';
 
-  onNavigate(feature: string) {
-    this.loadedFeature = feature;
-  }
 }
