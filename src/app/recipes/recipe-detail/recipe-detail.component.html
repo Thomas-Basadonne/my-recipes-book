@@ -42,9 +42,21 @@
           >
         </li>
         <li>
-          <a class="dropdown-item" (click)="onEditRecipe()">Modifica ricetta</a>
+          <a
+            class="dropdown-item"
+            (click)="onEditRecipe()"
+            style="cursor: pointer"
+            >Modifica ricetta</a
+          >
         </li>
-        <li><a class="dropdown-item">Cancella ricetta</a></li>
+        <li>
+          <a
+            class="dropdown-item"
+            (click)="onDeleteRecipe()"
+            style="cursor: pointer"
+            >Cancella ricetta</a
+          >
+        </li>
       </ul>
     </div>
     <div class="mt-3">
