@@ -1,33 +1,52 @@
 <div class="row">
   <div class="col-xs-12">
-    <form>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
       <div class="row align-items-center">
         <div class="col-sm-5 form-group">
           <label for="name">Nome</label>
-          <input type="text" id="name" class="form-control" #nameInput />
+          <input
+            type="text"
+            id="name"
+            class="form-control"
+            name="name"
+            ngModel
+            required=""
+          />
         </div>
         <div class="col-sm-2 form-group">
           <label for="quantity">Quantità</label>
           <input
+            name="quantity"
+            ngModel
             type="number"
             id="quantity"
             class="form-control"
-            #quantityInput
+            required=""
+            pattern="^[1-9]+[0-9]*$"
           />
         </div>
         <div class="col-sm-auto align-self-end">
           <div class="btn-group" role="group">
             <button
               type="submit"
-              (click)="onAddItem()"
               class="btn btn-outline-success"
+              [disabled]="!f.valid"
             >
-              Aggiungi
+              {{ editMode ? "aggiorna" : " aggiungi" }}
             </button>
-            <button type="button" class="btn btn-outline-danger">
+            <button
+              type="button"
+              class="btn btn-outline-danger"
+              (click)="onDelete()"
+              [disabled]="!editMode"
+            >
               Elimina
             </button>
-            <button type="button" class="btn btn-outline-warning">
+            <button
+              type="button"
+              class="btn btn-outline-warning"
+              (click)="onClear()"
+            >
               Svuota campi
             </button>
           </div>
