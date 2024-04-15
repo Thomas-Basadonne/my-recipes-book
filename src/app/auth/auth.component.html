@@ -1,0 +1,65 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">{{ isLoginMode ? "Login" : "Signup" }}</div>
+
+        <div *ngIf="isLoading">
+          <app-spinner></app-spinner>
+        </div>
+
+        <div class="alert alert-danger" *ngIf="error">
+          <p>{{ error }}</p>
+        </div>
+        <div class="card-body">
+          <form
+            #authForm="ngForm"
+            (ngSubmit)="onSubmit(authForm)"
+            *ngIf="!isLoading"
+          >
+            <div class="mb-3">
+              <label for="email" class="form-label">email</label>
+              <input
+                type="text"
+                class="form-control"
+                id="email"
+                placeholder="Enter email"
+                ngModel
+                name="email"
+                email
+                required=""
+              />
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder="Password"
+                ngModel
+                name="password"
+                required=" "
+                minlength="6"
+              />
+            </div>
+            <button
+              type="submit"
+              class="btn btn-primary me-2"
+              [disabled]="!authForm.valid"
+            >
+              {{ isLoginMode ? "Login" : "Signup" }}
+            </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              (click)="onSwitchMode()"
+            >
+              Vai al {{ isLoginMode ? "Signup" : "Login" }}
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
