@@ -70,32 +70,32 @@ export class AuthService {
   }
 
   autoLoging() {
-    if (typeof localStorage !== 'undefined') {
-      const userData: {
-        email: string;
-        id: string;
-        _token: string;
-        _tokenExpirationDate: string;
-      } = JSON.parse(localStorage.getItem('userData'));
-      if (!userData) {
-        return;
-      }
-      const loadedUser = new User(
-        userData.id,
-        userData.email,
-        userData._token,
-        new Date(userData._tokenExpirationDate)
-      );
+    if (typeof localStorage === 'undefined') {
+      return;
+    }
+    
+    const userData: {
+      email: string;
+      id: string;
+      _token: string;
+      _tokenExpirationDate: string;
+    } = JSON.parse(localStorage.getItem('userData'));
+    if (!userData) {
+      return;
+    }
+    const loadedUser = new User(
+      userData.id,
+      userData.email,
+      userData._token,
+      new Date(userData._tokenExpirationDate)
+    );
 
-      if (loadedUser.token) {
-        this.user.next(loadedUser);
-        const expirationDuration =
-          new Date(userData._tokenExpirationDate).getTime() -
-          new Date().getTime();
-        this.autoLogout(expirationDuration);
-      }
-    } else {
-      console.error('localStorage is not available in this environment');
+    if (loadedUser.token) {
+      this.user.next(loadedUser);
+      const expirationDuration =
+        new Date(userData._tokenExpirationDate).getTime() -
+        new Date().getTime();
+      this.autoLogout(expirationDuration);
     }
   }
 
